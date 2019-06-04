@@ -1,0 +1,97 @@
+/*
+    Programación 4 - Proyecto #2
+    15 Junio 2019
+
+    Document   : login.css
+    Author     : Rachel Basulto 801030879
+                 Danny Gómez    116440310
+*/
+
+#h1{
+    margin-left: 30%;
+    margin-top: 5%; 
+}
+
+h2{
+    margin-right: 43%;
+    font-size: 50px;
+    font-family: 'Abel', sans-serif;
+    text-align: center;
+    margin-top: 5%; 
+    text-shadow: 2px 2px 2px #CCCCCC;
+}
+
+#imgcontainer{
+    margin-left: 230px;
+    position: relative;
+    bottom: 68px;
+    width: 25%;
+}
+
+#imgcontainer img{
+    width:70%;
+    position: absolute;
+}
+
+form{
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    background-color: rgba(102,0,153,0.10);
+    margin-left: 35%;
+    font-family: 'Vollkorn', serif;
+    font-size: 20px;
+    position: absolute;
+    margin-top: 5%;
+}
+
+html{
+    background: url("https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 1600px 780px;
+}
+
+label{
+    margin-left: 42px;
+    display: inline-block;  
+}
+
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 8px 12px;
+    margin: 8px 42px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 13.5px;
+}
+
+button{
+    background-color: #e08f37;
+    color: white;
+    padding: 8px 12px;
+    margin: 30px 42px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+#aviso{
+    font-family: 'Vollkorn', serif;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 13px;
+    margin-top: 29%;    
+}
+
+
+
