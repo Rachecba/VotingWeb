@@ -1,0 +1,19 @@
+/*
+    Programación 4 - Proyecto #2
+    15 Junio 2019
+
+    Document   : datos.css
+    Author     : Rachel Basulto 801030879
+                 Danny Gómez    116440310
+*/
+
+html{
+    background-color: #f0f0f6;
+}
+    
+h2{
+    font-family: 'Crimson Text', serif;
+    font-size: 40px;
+    text-shadow: 2px 2px #9999ff;
+    text-align: center;
+}

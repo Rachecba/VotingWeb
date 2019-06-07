@@ -11,27 +11,27 @@ package modelo;
 import java.io.Serializable;
 
 public class Administrador implements Serializable {
-    long cedula;
+    String cedula;
     String nombre;
-    String apellidos;
+    String apellido1;
+    String apellido2;
     String usuario;
     String pass;
-    String observaciones;
 
-    public Administrador(long cedula, String nombre, String apellidos, String usuario, String pass, String observaciones) {
+    public Administrador( String cedula, String nombre, String apellido1, String apellido2, String usuario, String pass) {
         this.cedula = cedula;
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         this.usuario = usuario;
         this.pass = pass;
-        this.observaciones = observaciones;
     }
 
-    public long getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(long cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -43,12 +43,20 @@ public class Administrador implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+   public String getApellido2() {
+        return apellido2;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+    
+     public String getApellido1() {
+        return apellido1;
+    }
+    
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
     }
 
     public String getUsuario() {
@@ -66,14 +74,4 @@ public class Administrador implements Serializable {
     public void setPass(String pass) {
         this.pass = pass;
     }
-
-    public String getObservaciones() {
-        return observaciones;
-    }
-
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
-    }
-    
-    
 }

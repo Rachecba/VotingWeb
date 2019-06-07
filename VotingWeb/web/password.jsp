@@ -1,0 +1,51 @@
+<%-- 
+    Programación 4 - Proyecto #2
+    26 Junio 2019
+
+    Document   : password.jsp
+    Author     : Rachel Basulto 801030879
+                 Danny Gómez    116440310
+--%>
+<%@page import="modelo.dao.GestorLogin"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=, text/html; charset=UTF-81" http-equiv="Content-Type">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="css/password.css" rel="stylesheet" type="text/css"/>
+        <script src="js/encabezado.js" type="text/javascript"></script>
+        <script src="js/redirect.js" type="text/javascript"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cookie|Vollkorn|Satisfy" rel="stylesheet"> 
+        <title>Cambiar Contraseña</title>
+    </head>
+    <body onload="init();">
+        <%
+            if(!GestorLogin.obtenerInstancia().isValidado()){
+                String redirectURL = "index.jsp";
+                response.sendRedirect(redirectURL);
+            }
+        %>
+        <div id = 'encabezado' class="w3-sidebar w3-bar-block w3-indigo w3-animate-left" style="display:none">
+            <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Menu &times;</button>
+            <a href="#" class="w3-bar-item w3-button" onClick ="redirectVotar()">Votar</a>
+            <a href="#" class="w3-bar-item w3-button" onClick ="redirectDatos()">Analizar Datos</a>
+            <a href="#" class="w3-bar-item w3-button" onClick ="redirectPass()">Cambiar contraseña</a>
+            <a href="#" class="w3-bar-item w3-button" onClick ="redirectConfig()">Configuración</a>
+            <a href="#" class="w3-bar-item w3-button" onClick ="redirectLogout()">Cerrar sesión</a>
+        </div>
+        <div id='cuerpo' class="w3-container">
+            <button class="w3-button w3-indigo w3-xxlarge" onclick="w3_open()">&#9776;</button>
+            <h2>Cambiar Contraseña</h2>
+            <form action="ServicioPass" method="post" id="loginForm">
+                <div class="container">
+                    <label for="username"><br>Usuario</label><br>
+                    <input type="text" placeholder="Ingrese usuario" name="username" required>
+                    <label for="password"><br>Contraseña</label><br>
+                    <input type="password" placeholder="Ingrese contraseña nueva" name="password" required><br>
+                    <button type="submit" id="change">Cambiar</button><br>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -11,30 +11,35 @@ package modelo;
 import java.io.Serializable;
 
 public class Usuario implements Serializable{
-    long cedula;
+    String cedula;
     String nombre;
-    String apellidos;
+    String apellido1;
+    String apellido2;
     String pass;
+    int activo;
     
     public Usuario(){
-        this.cedula = 0;
+        this.cedula = "";
         this.nombre = "";
-        this.apellidos = "";
+        this.apellido1 = "";
+        this.apellido2 = "";
         this.pass = "";
     }
 
-    public Usuario(long cedula, String nombre, String apellidos, String pass) {
+    public Usuario(String cedula, String nombre, String apellido1, String apellido2, String pass, int activo) {
         this.cedula = cedula;
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         this.pass = pass;
+        this.activo = activo;
     }
 
-    public long getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(long cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -46,12 +51,28 @@ public class Usuario implements Serializable{
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido2() {
+        return apellido2;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+
+    public int getActivo() {
+        return activo;
+    }
+
+    public void setActivo(int activo) {
+        this.activo = activo;
+    }
+
+    public String getApellido1() {
+        return apellido1;
+    }
+    
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
     }
 
     public String getPass() {
