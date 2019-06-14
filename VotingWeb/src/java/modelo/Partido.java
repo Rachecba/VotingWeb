@@ -11,14 +11,16 @@ package modelo;
 public class Partido {
     String siglas;
     String nombre;
+    byte[] bandera;
     String observaciones;
 
-    public Partido(String siglas, String nombre, String observaciones) {
+    public Partido(String siglas, String nombre, byte[] bandera, String observaciones) {
         this.siglas = siglas;
         this.nombre = nombre;
+        this.bandera = bandera;
         this.observaciones = observaciones;
     }
-
+    
     public String getSiglas() {
         return siglas;
     }
@@ -35,6 +37,14 @@ public class Partido {
         this.nombre = nombre;
     }
 
+    public byte[] getBandera() {
+        return bandera;
+    }
+
+    public void setBandera(byte[] bandera) {
+        this.bandera = bandera;
+    }
+
     public String getObservaciones() {
         return observaciones;
     }
@@ -42,6 +52,6 @@ public class Partido {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
-    
+
     
 }

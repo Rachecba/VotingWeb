@@ -37,7 +37,7 @@ public class GestorLogin implements Serializable{
         List<Administrador> admins = GestorAdmins.obtenerInstancia().listarAdmins();
                
         for(Usuario u : usuarios){
-            if(u.getCedula().equals(username) && u.getPass().equals(pass)){
+            if(u.getCedula().equals(username) && u.getClave().equals(pass)){
                 validado = true;
                 Usuario user = new Usuario(username, u.getNombre(), u.getApellido1(), u.getApellido2(), pass, 1);
                 logged = new Logged(user, null, "usuario");

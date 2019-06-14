@@ -27,16 +27,20 @@
             <a href="#" class="w3-bar-item w3-button" onClick ="redirectPass()">Cambiar contraseña</a>
             <a href="#" class="w3-bar-item w3-button" onClick ="redirectConfig()">Configuración</a>
             <a href="#" class="w3-bar-item w3-button" onClick ="redirectLogout()">Cerrar sesión</a>
-        </div>
-        <div id='cuerpo'class="w3-container">
-            <button class="w3-button w3-indigo w3-xxlarge" onclick="w3_open()">&#9776;</button>
-            <h2>Datos recolectados de las votaciones</h2>
-            <!-- aqui ingreso los datos recolectados de los partidos -->
-            <h3>Total de votantes</h3>
-            <h3>Votantes con voto efectivo</h3>
-            <h3>Votantes que se abstuvieron</h3>
-            <h3>Total de votos por partido</h3>
-            <h3>Ganador</h3>
-        </div>
+       </div>
+       <div id='cuerpo'class="w3-container">
+           <button class="w3-button w3-indigo w3-xxlarge" onclick="w3_open()">&#9776;</button>
+           <form id="config" action="ServicioDatos" method="POST">
+               <h2 name="titulo">Datos recolectados de las votaciones</h2>
+               <!-- aqui ingreso los datos recolectados de los partidos -->
+               <h3 name="totalVotantes">Total de votantes<p name="votantes"></p></h3>
+               <h3 name="votosEfectivos">Votantes con voto efectivo<p name="efectivos"></p></h3>
+               <h3 name="abstinencia">Votantes que se abstuvieron<p name="abs"></p></h3>
+               <h3 name="totalVotos">Total de votos por partido<p name="votos"></p></h3>
+               <!-- aqui se hace en el js, una lista con los partidos. Poner atributo name a los partidos para poder agarrarlos en el servlet -->
+               <h3 name="ganador">Ganador<p name="gano"></p></h3>
+               <button type="submit">Descargar XML</button>
+           </form>
+       </div>
     </body>
 </html>

@@ -9,7 +9,6 @@ Author     : Rachel Basulto 801030879
 package modelo.dao;
 
 import java.io.Serializable;
-import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -123,5 +122,30 @@ public class GestorUsuarios implements Serializable{
                 return u;
         }
         return null;
+    }
+    
+    public String getCed(String nombre){
+        List<Usuario> lista = listarUsuarios();
+        
+        for(Usuario u : lista){
+            String completo = u.getNombre() + " " + u.getApellido1() + " " + u.getApellido2();
+            if(completo.equals(nombre))
+                return u.getCedula();
+        }
+        return null;
+    }
+    
+    public boolean validarVotacion(){
+        Logged log = GestorLogin.obtenerInstancia().getLogged();
+        
+        List<Usuario> lista = listarUsuarios();
+        
+        for(Usuario u : lista){
+            if(log.getUser().getCedula().equals(u.getCedula())){
+                if(u.getClave().equals(u.getCedula()))
+                    return false;
+            }
+        }
+        return true;
     }
 }

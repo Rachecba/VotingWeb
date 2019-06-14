@@ -6,7 +6,7 @@
     Author     : Rachel Basulto 801030879
                  Danny Gómez    116440310
 --%>
-
+<%@page import="modelo.beans.Archivo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,10 +16,11 @@
         <link href="css/inicio.css" rel="stylesheet" type="text/css"/>
         <script src="js/encabezado.js" type="text/javascript"></script>
         <script src="js/redirect.js" type="text/javascript"></script>
+        <script src="js/config.js" type="text/javascript"></script>
         <link href="https://fonts.googleapis.com/css?family=Satisfy|Vollkorn|Cookie|Abel|Crimson" rel="stylesheet">
         <title>Votacion</title>
     </head>
-    <body>
+    <body onload="init()">
         <div id = 'encabezado' class="w3-sidebar w3-bar-block w3-indigo w3-animate-left" style="display:none">
             <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Menu &times;</button>
             <a href="#" class="w3-bar-item w3-button" onClick ="redirectVotar()">Votar</a>
@@ -32,12 +33,16 @@
             <button class="w3-button w3-indigo w3-xxlarge" onclick="w3_open()">&#9776;</button>
             <h2>Configuración de Votaciones</h2>
             <p>En esta página podrá configurar las votaciones que desee. Más abajo se presentan las opciones de configuración.</p>
-            <p>Cargar usuarios desde archivo de texto o XML</p> <!-- aqui ingreso un botocinto como el de la tarea para que seleccione el archivo -->
-            <p>Cargar candidatos desde un archivo XML</p> <!-- aqui ingreso un botocinto como el de la tarea para que seleccione el archivo -->
-            <p>Asocie un candidato a cada partido</p> <!-- aqui puedo hacer un tipo de drop down, donde hayan dos y seleccione un candidato para cada uno o algo asi-->
-            <p>Fecha de inicio</p> <!-- aqui pongo un calendario -->
-            <p>Fecha de final</p> <!-- aqui pongo un calendario -->
-            <button>Crear votacion</button> <!-- este boton crea la votacion, solo que no se a donde van los datos de la votacion -->
+            <form id="config" action="ServicioConfig" method="POST" enctype="multipart/form-data">
+                <p>Cargar usuarios desde archivo de texto o XML. <strong>Archivo:&nbsp;</strong><input type="file" id="archivo" name="archivo" /></p> <!-- aqui ingreso un botocinto como el de la tarea para que seleccione el archivo -->
+                <p>Asocie un candidato a cada partido    <strong>Candidato:</strong><select name="candidatos" id="selectCand"></select><strong>Partido:</strong><select name="partidos" id="selectPart"></select> <button onclick="agregar()">Agregar</button></p> <!-- aqui puedo hacer un tipo de drop down, donde hayan dos y seleccione un candidato para cada uno o algo asi-->
+                <div id="partidosCandidatos" name="formulario">
+                    <p><strong>Partidos y Candidatos</strong></p>
+                </div><!-- aqui van los candidatos con su partido  -->
+                <p>Fecha de inicio <input type='date' name="fecha_inicio"></p> <!-- aqui pongo un calendario -->
+                <p>Fecha final <input type='date' name="fecha_final"></p> <!-- aqui pongo un calendario -->
+                <button type="submit">Enviar</button> <!-- este boton crea la votacion, solo que no se a donde van los datos de la votacion.. van a votacion-partido -->
+            </form>
         </div>
     </body>
 </html>

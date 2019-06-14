@@ -8,17 +8,16 @@
  */
 package modelo;
 
-import java.util.Date;
 
 public class Votacion {
     int id;
-    Date fecha_inicio;
-    Date fehca_apertura;
-    Date fecha_cierre;
-    Date fecha_final;
+    String fecha_inicio;
+    String fehca_apertura;
+    String fecha_cierre;
+    String fecha_final;
     int estado;
 
-    public Votacion(int id, Date fecha_inicio, Date fehca_apertura, Date fecha_cierre, Date fecha_final, int estado) {
+    public Votacion(int id, String fecha_inicio, String fehca_apertura, String fecha_cierre, String fecha_final, int estado) {
         this.id = id;
         this.fecha_inicio = fecha_inicio;
         this.fehca_apertura = fehca_apertura;
@@ -35,35 +34,35 @@ public class Votacion {
         this.id = id;
     }
 
-    public Date getFecha_inicio() {
+    public String getFecha_inicio() {
         return fecha_inicio;
     }
 
-    public void setFecha_inicio(Date fecha_inicio) {
+    public void setFecha_inicio(String fecha_inicio) {
         this.fecha_inicio = fecha_inicio;
     }
 
-    public Date getFehca_apertura() {
+    public String getFehca_apertura() {
         return fehca_apertura;
     }
 
-    public void setFehca_apertura(Date fehca_apertura) {
+    public void setFehca_apertura(String fehca_apertura) {
         this.fehca_apertura = fehca_apertura;
     }
 
-    public Date getFecha_cierre() {
+    public String getFecha_cierre() {
         return fecha_cierre;
     }
 
-    public void setFecha_cierre(Date fecha_cierre) {
+    public void setFecha_cierre(String fecha_cierre) {
         this.fecha_cierre = fecha_cierre;
     }
 
-    public Date getFecha_final() {
+    public String getFecha_final() {
         return fecha_final;
     }
 
-    public void setFecha_final(Date fecha_final) {
+    public void setFecha_final(String fecha_final) {
         this.fecha_final = fecha_final;
     }
 

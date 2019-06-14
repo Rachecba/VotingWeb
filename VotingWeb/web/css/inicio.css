@@ -17,3 +17,24 @@ h2{
     text-shadow: 2px 2px #9999ff;
     text-align: center;
 }
+
+
+#tabla {
+    border: 2px solid;
+    border-collapse: collapse;
+}
+
+#tabla th {
+    color: black;
+}
+
+#tabla th,
+#tabla td {
+    border: 1px solid black;
+    padding: 4px 16px 4px 16px;
+    background-color: white;
+}
+
+#tabla tr:nth-child(even) {
+    background-color: #e0dddb;
+}

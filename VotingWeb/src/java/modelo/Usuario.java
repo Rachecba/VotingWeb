@@ -9,29 +9,26 @@
 package modelo;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlElement;
 
 public class Usuario implements Serializable{
     String cedula;
     String nombre;
     String apellido1;
     String apellido2;
-    String pass;
+    String clave;
     int activo;
     
     public Usuario(){
-        this.cedula = "";
-        this.nombre = "";
-        this.apellido1 = "";
-        this.apellido2 = "";
-        this.pass = "";
+       this.clave = "";
     }
 
-    public Usuario(String cedula, String nombre, String apellido1, String apellido2, String pass, int activo) {
+    public Usuario(String cedula, String nombre, String apellido1, String apellido2, String clave, int activo) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
-        this.pass = pass;
+        this.clave = clave;
         this.activo = activo;
     }
 
@@ -75,12 +72,12 @@ public class Usuario implements Serializable{
         this.apellido1 = apellido1;
     }
 
-    public String getPass() {
-        return pass;
+    public String getClave() {
+        return clave;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPass(String clave) {
+        this.clave = clave;
     }
     
     
